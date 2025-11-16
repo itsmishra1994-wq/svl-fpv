@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SVL FPV Operator</title>
+  <link rel="manifest" href="manifest.json">
+  <script src="app.js"></script>
+  <style>
+    body { font-family: sans-serif; background: #e6f0ff; margin: 0; padding: 0; }
+    header { background: #007bff; color: white; padding: 15px; text-align: center; }
+    nav { display: flex; background: #cce0ff; }
+    nav button { flex: 1; padding: 12px; border: none; background: #cce0ff; }
+    nav button.active { background: #99c2ff; }
+    section { padding: 20px; display: none; }
+    section.active { display: block; }
+  </style>
+</head>
+<body>
+<header>SVL FPV Operator</header>
+<nav>
+  <button onclick="showTab('operator')">Operator</button>
+  <button onclick="showTab('addtarget')">Add Target</button>
+  <button onclick="showTab('importexport')">Import/Export</button>
+</nav>
+
+<section id="operator" class="active">
+  <h2>Operator Location</h2>
+  <label>Latitude:</label><input id="op_lat"><br>
+  <label>Longitude:</label><input id="op_lng"><br>
+</section>
+
+<section id="addtarget">
+  <h2>Add Target</h2>
+  <label>Latitude:</label><input id="t_lat"><br>
+  <label>Longitude:</label><input id="t_lng"><br>
+  <button onclick="addTarget()">Add</button>
+  <ul id="target_list"></ul>
+</section>
+
+<section id="importexport">
+  <h2>Import/Export JSON</h2>
+  <input type="file" id="jsonFile"><br>
+  <button onclick="importJSON()">Import</button>
+  <button onclick="exportJSON()">Export</button>
+</section>
+
+</body>
+</html>

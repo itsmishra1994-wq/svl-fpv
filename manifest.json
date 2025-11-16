@@ -1,0 +1,9 @@
+{
+  "name": "SVL FPV Operator",
+  "short_name": "FPV",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#e6f0ff",
+  "theme_color": "#007bff",
+  "icons": []
+}
