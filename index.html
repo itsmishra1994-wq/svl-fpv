@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVL/FPV Operator</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body>
+<header>Mission Control</header>
+
+<nav>
+  <button id="svlBtn" class="active" onclick="showTab('svl')">SVL Operator</button>
+  <button id="fpvBtn" onclick="showTab('fpv')">FPV Operator</button>
+</nav>
+
+<section id="svl" class="active card">
+  <h2>Enter Targets</h2>
+  <label>Latitude</label>
+  <input id="svl_lat">
+  <label>Longitude</label>
+  <input id="svl_lng">
+  <label>Target Image</label>
+  <input type="file" id="svl_img" accept="image/*" capture="environment">
+  <button onclick="addTarget()">Add Target</button>
+  <ul id="svl_list"></ul>
+  <button class="export" onclick="exportSVL()">Export JSON</button>
+</section>
+
+<section id="fpv" class="card">
+  <h2>FPV Operator</h2>
+  <label>Your Latitude</label>
+  <input id="fpv_lat">
+  <label>Your Longitude</label>
+  <input id="fpv_lng">
+  <button onclick="getGPS()">Use Mobile GPS</button>
+
+  <h3>Import Mission JSON</h3>
+  <input type="file" id="fpv_json">
+  <button onclick="importFPV()">Import</button>
+
+  <table id="fpv_table">
+    <tr><th>Image</th><th>Lat</th><th>Lng</th><th>Dist (m)</th><th>Bearing</th></tr>
+  </table>
+</section>
+</body>
+</html>
